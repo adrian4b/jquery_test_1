@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<!--
+   This is a jQuery Tools standalone demo. Feel free to copy/paste.
+   http://flowplayer.org/tools/demos/
+
+   Do *not* reference CSS files and images from flowplayer.org when in
+   production Enjoy!
+-->
+<head>
+  <title>jQuery Tools standalone demo</title>
+
+    <!-- include the Tools -->
+  <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+  
+  <!-- standalone page styling (can be removed) -->
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  
+    <link rel="stylesheet" type="text/css" href="./css/facebox.css"/>
+
+  <style>
+
+  </style>
+<!--[if IE]>
+<style type="text/css">
+  .facebox {
+  background:transparent;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#333333,endColorstr=#333333);
+  zoom: 1;
+  }
+</style>
+<![endif]-->
+</head>
+<body><button id="open_now">Open Again</button>
+<!-- facebook dialog -->
+<div id="facebox">
+  <div>
+    <h2>Facebox</h2>
+    <p>
+      This dialog is opened programmatically when the page
+      loads. There is no need for a trigger element.
+    </p>
+    <form>
+      <input type="file" />
+    </form>
+    <p style="color:#666">
+      To close, click the Close button or hit the ESC key.
+    </p>
+    <!-- yes/no buttons -->
+    <p>
+      <button class="close"> Close </button>
+    </p>
+  </div>
+</div>
+
+<script>
+$(document).ready(function() {
+  $("#open_now").click(function() {
+      $("#facebox").overlay().load();
+  });
+
+    // select the overlay element - and "make it an overlay"
+  $("#facebox").overlay({
+
+    // custom top position
+    top: 260,
+
+    // some mask tweaks suitable for facebox-looking dialogs
+    mask: {
+
+    // you might also consider a "transparent" color for the mask
+    color: '#fff',
+
+    // load mask a little faster
+    loadSpeed: 200,
+
+    // very transparent
+    opacity: 0.5
+    },
+
+    // disable this for modal dialog-type of overlays
+    closeOnClick: false,
+
+    // load it immediately after the construction
+    load: false
+
+    });
+    });
+</script>
+</body>
+</html>
