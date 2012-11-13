@@ -1,4 +1,4 @@
-.mainMenu { background-color: #bbb; 
+.mainMenu { background-color: #004866; 
 	list-style-type: none; 
 	padding: 0; 
 	margin: 0; 
@@ -8,7 +8,7 @@
 	font-size: 0px;
 }
 .mainMenu li:hover { 
-background-color: #ddd; 
+background-color: #004866; 
 }    
 .mainMenu li:first-child { border-left: none; border-radius: 7px 0 0 7px; }
 .mainMenu li { 
@@ -17,7 +17,7 @@ background-color: #ddd;
 	display: inline-block; 
 	padding: 0.5em 1.5em; 
 	cursor: pointer; 
-	color: #444; 
+	color: white; 
 	text-shadow: #f7f7f7 0 1px 1px; 
 	border-left: 1px solid #ddd; 
 	border-right: 1px solid #888; 

@@ -7,6 +7,8 @@ var initialData = [
     { name: "Sale_3232", type: "Sale", price: 0.35 },
     { name: "Ho_333", type: "Home Equity", price: 1.50 }
 ];
+
+
  
 var PagedGridModel = function(items) {
     this.items = ko.observableArray(items);
@@ -22,11 +24,25 @@ var PagedGridModel = function(items) {
         pageSize: 20
     });
     
-    this.menus = ['Create New File', 'Efs', 'Find', 'News', 'Logout'];
+    this.menus = ['Create New File', 'EFS', 'Find', 'News', 'DocGen','Logout'];
+    
+    this.generatedFiles = [
+		{fileName : "test1.rtf", size : "24k"},
+		{fileName : "test2.rtf", size : "4k"},
+		{fileName : "test3.rtf", size : "2k"}
+	];
+    this.downloadDocGen = function(genFiles){
+    	alert(genFiles.fileName);
+    	
+    	var url='./docgen/'+genFiles.fileName;  
+		window.open(url,'Download');
+    }
     
     this.openForm=function(menu){
       if(menu == "News")
         $("#newsbox").overlay().load();
+      if(menu == "DocGen")
+        $("#docgenbox").overlay().load();
     }
 };
 

@@ -23,7 +23,7 @@
 
 /* default close button positioned on upper right corner */
 .apple_overlay .close {
-    background-image:url(/media/img/overlay/close.png);
+    background-image:url(./img/close.png);
     position:absolute; right:5px; top:5px;
     cursor:pointer;
     height:35px;
