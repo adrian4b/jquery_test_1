@@ -27,3 +27,5 @@ body { font-family: arial; font-size: 14px; }
 .mails th:nth-child(4), .mails td:nth-child(4) { width: 15%; }
 .mails th:last-child { border-right: none }
 .mails tr:nth-child(even) { background-color: #EEE; }
+
+.titleCaption{ background-color:#F7D3B5; border: 1px solid #CCC;}

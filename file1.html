@@ -1,53 +1,115 @@
 
 <!DOCTYPE html>
 <html>
-<!--
-   This is a jQuery Tools standalone demo. Feel free to copy/paste.
-   http://flowplayer.org/tools/demos/
 
-   Do *not* reference CSS files and images from flowplayer.org when in
-   production Enjoy!
--->
-<head>
-  <title>jQuery Tools standalone demo</title>
+	<head>
+	  <title>Some file matter demo</title>
 
-    <!-- include the Tools -->
-	<script src="./js/jquery.tools.min.js"></script>
-  
-	<!-- standalone page styling (can be removed) -->
-	<link rel="shortcut icon" href="./img/favicon.ico">
-	<link rel="stylesheet" type="text/css"    href="./css/standalone.css"/>
-	<link rel="stylesheet" href="./css/tabs_style.css"   type="text/css" media="screen" />
-	
-</head>
-<body><!-- the tabs -->
-<ul class="tabs">
-	<li><a href="#">Status</a></li>
-	<li><a href="#">Notes</a></li>
-	<li><a href="#">Dates</a></li>
-	<li><a href="#">Byers</a></li>
-	<li><a href="#">Sellers</a></li>
-	<li><a href="#">General</a></li>
-	<li><a href="#">Property</a></li>
-</ul>
+		<!-- include the Tools -->
+		<script src="./js/jquery.tools.min.js"></script>
+	  
+		<!-- standalone page styling (can be removed) -->
+		<link rel="shortcut icon" href="./img/favicon.ico">
+		<link rel="stylesheet" type="text/css"    href="./css/standalone.css"/>
+		<link rel="stylesheet" href="./css/tabs_style.css"   type="text/css" media="screen" />
+		<link rel="stylesheet" href="./css/style.css"   type="text/css" />
+		
+	</head>
+	<body>
+		<!-- File Matter info -->
+		<div class="titleCaption">
+			File/Mat No:<input value="Some file matter demo" readonly="true" size="50" />Conveyance:<input value="Purchase" readonly="true" />Completion Date:<input value="November 23, 2012" readonly="true" />
+		</div>
+		
+		
+		<!-- the tabs -->
+		<ul class="tabs">
+			<li><a href="#">Status</a></li>
+			<li><a href="#">Notes</a></li>
+			<li><a href="#">Dates</a></li>
+			<li><a href="#">Buyers</a></li>
+			<li><a href="#">Sellers</a></li>
+			<li><a href="#">General</a></li>
+			<li><a href="#">Property</a></li>
+			<li><a href="#">GST</a></li>
+			<li><a href="#">Commissions</a></li>
+			<li><a href="#">Strata</a></li>
+		</ul>
 
-<!-- tab "panes" -->
-<div class="panes">
-	<div>First tab content. Tab contents are called "panes"</div>
-	<div>Second tab content</div>
-	<div>Third tab content</div>
-	<div>Second tab content</div>
-	<div>Third tab content</div>
-	<div>Second tab content</div>
-	<div>Third tab content</div>
-</div>
+		<!-- tab "panes" -->
+		<div class="panes">
+			<div id="StatusTab">
+				<table>
+					<tr>
+						<td align="right">Date Created: </td>
+						<td><input value="13/11/2012" readonly="true"> </input></td>
+					</tr>
+					<tr>
+						<td align="right">Created By: </td>
+						<td><input value="Adrian Brezai" readonly="true"> </input></td>
+					</tr>
+					<tr>
+						<td align="right">Scope: </td>
+						<td><input type="radio" name= "grp1" value="Global" readonly="true">Global </input></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="radio" name= "grp1" value="Local" readonly="true" checked>Local </input></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><input type="radio" name= "grp1" value="Private" readonly="true" >Private </input></td>
+					</tr>
+					<tr>
+						<td align="right">Locked:</td>
+						<td><input type="checkbox" name= "locked" value="Locked" readonly="true" checked>Locked </input></td>
+					</tr>
+				</table>
+				
+			</div>
+			<div id="NotesTab">
+				<table>
+					<tr>
+						<td align="right">Type: </td>
+						<td><input type="radio" name= "grp2" value="BF" >Bring Forward </input>
+							<input type="radio" name= "grp2" value="Note"  checked>Note </input>
+							<input type="radio" name= "grp2" value="Appointment"  >Appointment </input>
+						</td>
+					</tr>
+					<tr >
+						<td align="right">Note Desc: </td>
+						<td><input value="New File" readonly="true"> </input></td>
+					</tr>
+					<tr>
+						<td align="right">Author: </td>
+						<td><input value="Adrian Brezai" readonly="true"> </input></td>
+					</tr>
+					<tr>
+						<td align="right">Changed Date: </td>
+						<td><input value="Nov 11 2012 11:44:12PM" readonly="true"> </input></td>
+					</tr>
+					<tr>
+						<td align="right">Message</td>
+						<td><textarea cols="100" rows="20" name="myname">File created on 11/11/2012 11:44:12 PM by user adrian</textarea></td>
+					</tr>
+				</table>
+			</div>
+			<div><strong> This should have Dates information</strong></div>
+			<div><strong> This should have Buyers information</strong></div>
+			<div><strong> This should have Sellers information</strong></div>
+			<div><strong> This should have General information</strong></div>
+			<div><strong> This should have Property information</strong></div>
+			<div><strong> This should have GST information</strong></div>
+			<div><strong> This should have Commissions information</strong></div>
+			<div><strong> This should have Strata information</strong></div>
+		</div>
 
-<script>
-// perform JavaScript after the document is scriptable.
-$(function() {
-    // setup ul.tabs to work as tabs for each div directly under div.panes
-    $("ul.tabs").tabs("div.panes > div");
-});
-</script>
-</body>
+		<script>
+		// perform JavaScript after the document is scriptable.
+		$(function() {
+			// setup ul.tabs to work as tabs for each div directly under div.panes
+			$("ul.tabs").tabs("div.panes > div");
+		});
+		</script>
+	</body>
 </html>
