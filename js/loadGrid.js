@@ -1,11 +1,11 @@
 var initialData = [
-    { name: "Sale_123456", type: "Sale", price: 75.95 },
-    { name: "HE_12345", type: "Home Equity", price: 190.00 },
-    { name: "Purchase_333", type: "Purchase", price: 25.00 },
-    { name: "MO_87877", type: "Mortgage Only", price: 99.95 },
-    { name: "Sale_3333", type: "Sale", price: 6350 },
-    { name: "Sale_3232", type: "Sale", price: 0.35 },
-    { name: "Ho_333", type: "Home Equity", price: 1.50 }
+    { name: "Sale_123456", accessDate:"Nov 11, 2012", completionDate:"Nov 15, 2012", type: "Sale", firstClient :"Adrian", civicAddress:"123 Main Street" , outsideFirm:"Admin Firm", fintrac :"no"},
+    { name: "HE_12345", accessDate:"Nov 11, 2012", completionDate:"Nov 15, 2012",type: "Home Equity", firstClient :"Mike", civicAddress:"123 Main Street" , outsideFirm:"Admin Firm", fintrac :"yes" },
+    { name: "Purchase_333", accessDate:"Nov 11, 2012", completionDate:"Nov 15, 2012", type: "Purchase", firstClient :"Adrian", civicAddress:"123 Main Street" , outsideFirm:"Admin Firm", fintrac :"no" },
+    { name: "MO_87877", accessDate:"Nov 11, 2012", completionDate:"Nov 15, 2012", type: "Mortgage Only", firstClient :"Denise", civicAddress:"123 Main Street" , outsideFirm:"Admin Firm", fintrac :"no" },
+    { name: "Sale_3333", accessDate:"Nov 11, 2012", completionDate:"Nov 15, 2012",type: "Sale", firstClient :"Shannon", civicAddress:"123 Main Street" , outsideFirm:"Admin Firm", fintrac :"no" },
+    { name: "Sale_3232", accessDate:"Nov 11, 2012", completionDate:"Nov 15, 2012",type: "Sale", firstClient :"Adrian", civicAddress:"123 Main Street" , outsideFirm:"Admin Firm", fintrac :"yes" },
+    { name: "HE_333", accessDate:"Nov 11, 2012", completionDate:"Nov 15, 2012", type: "Home Equity", firstClient :"Adrian", civicAddress:"123 Main Street" , outsideFirm:"Admin Firm", fintrac :"no" }
 ];
 
 
@@ -18,8 +18,14 @@ var PagedGridModel = function(items) {
         data: this.items,
         columns: [
             { headerText: "File Matter", rowText: "name" },
-            { headerText: "File Matter Type", rowText: "type" },
-            { headerText: "Price", rowText: function (item) { return "$" + item.price.toFixed(2) } }
+            { headerText: "Acces Date", rowText: "accessDate" },
+			{ headerText: "CompletionDate", rowText: "completionDate" },
+            { headerText: "Type", rowText: "type" },
+			{ headerText: "First Client", rowText: "firstClient" },
+            { headerText: "Civic Address", rowText: "civicAddress" },
+			{ headerText: "Outside Practitioners Firm", rowText: "outsideFirm" },
+            { headerText: "FINTRAC", rowText: "fintrac" }
+            
         ],
         pageSize: 20
     });
@@ -43,6 +49,8 @@ var PagedGridModel = function(items) {
         $("#newsbox").overlay().load();
       if(menu == "DocGen")
         $("#docgenbox").overlay().load();
+	  if(menu == "Create New File")
+        window.open('wizard.htm','Download');
     }
 };
 
