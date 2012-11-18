@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta content="text/html; charset=ISO-8859-1"
+      http-equiv="Content-Type">
+    <title>test4</title>
+    
+    <link rel="stylesheet" href="./css/test4.css"
+      type="text/css" media="screen" />
+    
+      <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+    <script type="text/javascript" src="./js/knockout-2.2.0.js"></script>
+    <script type="text/javascript" src="./js/test4.js"></script>
+  </head>
+  <body>
+  	<div id="login" >
+  		<table>
+  			<tr> <td><label>User</label></td> 
+  				<td>
+    				<input type="text" id="login" placeholder="your user name" data-bind="value: userName"></input>
+    			<td>
+    		</tr>
+    		<tr><td><label>Password</label></td>
+    			<td>
+    				<input type="password" id="password" placeholder="your password" data-bind="value: userPassword"></input>
+    			</td>
+    		</tr>
+    		<tr>
+    		<td></td>
+    		<td>
+    			<button type="button" data-bind="click: processLogin">Login</button>
+    		</td>
+    		</table>
+    </div>
+    
+    <div id="content1" style="display: none;">
+      <ul class="tabs">
+		<li><a href="#">Active Sessions</a></li>
+		<li><a href="#">Error List</a></li>
+		<li><a href="#">Test WCF</a></li>
+	  </ul>
+
+		<!-- tab "panes" -->
+			<div class="panes">
+				<div id="activeSessions">
+					
+					<table class="testTable" >
+					<thead>
+						<tr><th >No.</th><th>Firm name</th><th>User name</th><th>SSL</th><th>Opened</th></tr>
+					</thead>
+					<tbody data-bind="foreach: activeSessions">
+						<tr>
+						<td width="10%" data-bind="text: $index() + 1"></td>
+						<td data-bind="text: FirmName"></td>
+						<td data-bind="text: UserName"></td>
+						<td data-bind="text: SSL"></td>				
+						<td data-bind="text: new Date(parseInt(SessionOpened.substr(6)))"></td>
+						</tr>
+					</tbody>
+					</table><button id="refreshActiveSessionsButton" data-bind="click: refreshActiveSessions"> Refresh</button>
+				
+				</div>
+				<div>Second tab content</div>
+				<div>Third tab content</div>
+			</div>
+    </div>
+    
+  </body>
+</html>
