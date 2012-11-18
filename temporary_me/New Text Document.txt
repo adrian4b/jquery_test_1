@@ -1,0 +1,79 @@
+	<div id="results">
+		<table class="mails" border="1">
+		<thead>
+			<tr><th >No.</th><th>Firm name</th><th>User name</th><th>SSL</th><th>Opened</th></tr>
+		</thead>
+		<tbody data-bind="foreach: testing">
+			<tr>
+				<td width="10%" data-bind="text: $index() + 1"></td>
+				<td data-bind="text: FirmName"></td>
+				<td data-bind="text: UserName"></td>
+				<td data-bind="text: SSL"></td>				
+				<td data-bind="text: new Date(parseInt(SessionOpened.substr(6)))"></td>
+			</tr>
+		</tbody>
+		</table>
+	</div>
+
+
+
+<script type="text/javascript">
+			var baseurl = "./BasicJsonService.svc/";
+
+			$("#btnSayHello").click(function () {
+				var sId = $("#yourName").val(); 
+	 
+				$.ajax({
+					cache: false,
+					type: "GET",
+					async: false,
+					url: baseurl+"sayHello(" +sId+")",
+					dataType: "json",
+					success: function (msg) {
+						alert(msg);
+					},
+					error: function (xhr) {
+						alert(xhr.responseText);
+					}
+				});
+			});
+			
+			$("#btnGetActiveUsers").click(function () {
+				var sId = $("#sessionId").val(); 
+	 
+				$.ajax({
+					cache: false,
+					type: "GET",
+					async: false,
+					url: baseurl+"getActiveUsers(" +sId+")",
+					dataType: "json",
+					success: function (msg) {
+						
+						ko.applyBindings(new PagedGridModel(msg));
+					},
+					error: function (xhr) {
+						alert(xhr.responseText);
+					}
+				});
+			});
+			
+			$("#btnLogin").click(function () {
+				var user = $("#userId").val(); 
+				var pwd = $("#password").val(); 
+	 
+				$.ajax({
+					cache: false,
+					type: "GET",
+					async: false,
+					url: baseurl+"login(" +user+","+pwd+ ")",
+					dataType: "json",
+					success: function (msg) {
+						alert(msg);
+					},
+					error: function (xhr) {
+						alert(xhr.responseText);
+					}
+				});
+			});
+
+	</script>

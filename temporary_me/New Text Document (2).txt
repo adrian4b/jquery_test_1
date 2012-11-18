@@ -1,0 +1,8 @@
+		var PagedGridModel = function(items) {
+			this.testing = ko.observableArray(items);
+
+			}
+		var DefaultModel = function() {
+			
+			this.testing = [{FirmName:"PS Law Firm",UserName:"Carol Conveyancer - PS"},{FirmName:"PS Law Firm",UserName:"Carol Conveyancer - PS"}];			
+			}
